@@ -1,0 +1,187 @@
+		<!-- <link rel="stylesheet" href="../public/css/recycle_v1.0.1.css"> -->
+		<script type="text/javascript" src="../bin/album_recycle_v1.0.0.js"></script>
+		<div id="PageScreen" >
+			<div id="album_recycle" >
+				<div class="view_header">
+					<h2 class="view_title">回收站</h2>
+				</div>
+				<div class="views_wrapper" >
+					<div class="views_top">
+						<form>
+							<div class="views_top_recycle clearfix">
+								<div class="re_left">
+									<input type="button" value="回收站" class="recycle_btn">
+								</div>
+								<div class="re_right">
+									<a class="bf_icon" id="recycle_delete_all">清空回收站</a>
+									<p>保留最近30天内删除的相册</p>
+								</div>	
+							</div>
+							<div class="recycle_bar">
+								<label class="checkall_album" >
+									<input type="checkbox" id="checkall_album" title="点击还原" value="全选" >全选/反选
+
+									<!-- <input type="checkbox" id="checkall_ant" value="反选"  >反选 -->
+								</label>
+								<label class="checkall_pic" style="display:none;" >
+									<input type="checkbox" id="checkall_pic" title="点击还原" value="全选" >全选/反选
+								</label>
+								<input type="button" class="back" value="还原">
+								<input class="delete" id="recycle_delete" value="删除" title="点击删除" type="button">
+								<span> 显示</span>
+								<a href="javascript:;" class="recycle_album_show">相册</a>
+								<a href="javascript:;" class="recycle_pic_show">图片</a>
+								<select class="select" style="display:none;">
+									<option value="全部">全部</option>
+									<option value="今天删除">今天删除</option>
+									<option value="昨天删除">昨天删除</option>
+									<option value="前天删除">前天删除</option>
+									<option value="一周删除">一周删除</option>
+								</select>
+							</div>
+						</form>	
+					</div>
+
+					<!-- 相册实例选中后内容页面 -->
+					<div class="views_cont" id="views_cont_album" >
+						<ul class="clearfix cont_item">
+							<li>
+								<div class="pic_wrapper">
+									<img src="../public/image/pic2.jpg" alt="blueboat">
+									<span class="number">共<em>4</em>张</span>
+									<label>
+										<input type="checkbox" name="check_album_name" >1111111111111111
+									</label>
+									<p>
+										<span class="date">20</span>天后过期
+									</p>
+								</div>
+
+							</li>
+							<li>
+								<div class="pic_wrapper">
+									<img src="../public/image/pic2.jpg" alt="blueboat">
+									<span class="number">共<em>4</em>张</span>
+									<label>
+										<input type="checkbox" name="check_album_name" >2222222222222222222
+									</label>
+									<p>
+										<span class="date">20</span>天后过期
+									</p>
+								</div>
+
+							</li>
+							<li>
+								<div class="pic_wrapper">
+									<img src="../public/image/pic2.jpg" alt="blueboat">
+									<span class="number">共<em>4</em>张</span>
+									<label>
+										<input type="checkbox" name="check_album_name" >333333333333333
+									</label>
+									<p>
+										<span class="date">20</span>天后过期
+									</p>
+								</div>
+
+							</li>
+							<li>
+								<div class="pic_wrapper">
+									<img src="../public/image/pic2.jpg" alt="blueboat">
+									<span class="number">共<em>4</em>张</span>
+									<label>
+										<input type="checkbox" name="check_album_name" >44444444444
+									</label>
+									<p>
+										<span class="date">20</span>天后过期
+									</p>
+								</div>
+
+							</li>
+
+
+						
+						</ul>
+					</div>
+					<!-- 相册实例选中后内容页面结束 -->
+					<!-- 图片实例选中后内容页面 -->
+					<div class="views_cont" id="views_cont_pic">
+						<ul class="clearfix cont_item">
+							<li>
+								<div class="pic_content">
+									<img src="../public/image/pic2.jpg" alt="blueboat">
+									<label>
+										<input type="checkbox" name="check_pic_name" >图片1
+									</label>
+									<p>
+										<span class="date">28</span>天后过期
+									</p>
+								</div>
+							</li>
+														<li>
+								<div class="pic_content">
+									<img src="../public/image/pic2.jpg" alt="blueboat">
+									<label>
+										<input type="checkbox" name="check_pic_name" >图片2
+									</label>
+									<p>
+										<span class="date">28</span>天后过期
+									</p>
+								</div>
+							</li>
+														<li>
+								<div class="pic_content">
+									<img src="../public/image/pic2.jpg" alt="blueboat">
+									<label>
+										<input type="checkbox" name="check_pic_name" >图片3
+									</label>
+									<p>
+										<span class="date">28</span>天后过期
+									</p>
+								</div>
+							</li>
+														<li>
+								<div class="pic_content">
+									<img src="../public/image/pic2.jpg" alt="blueboat">
+									<label>
+										<input type="checkbox" name="check_pic_name" >图片4
+									</label>
+									<p>
+										<span class="date">28</span>天后过期
+									</p>
+								</div>
+							</li>
+							
+						</ul>
+					</div>
+					<!-- 图片实例选中后内容页面结束 -->
+
+				</div>
+			</div>
+
+		<!--回收站删除确认-->
+		<div id="recycle_delete_alert">
+			<h3><i class="close_btn" title="关闭"></i>删除确认</h3>
+			<div class="alert_content">
+				<p>彻底删除后将无法恢复，确定删除？</p>
+			</div>
+			<span class="w_bottom">
+				<input type="button" id="recycle_delete_dete" value="确定" title="确定" />
+				<input type="button" id="recycle_delete_cancel" value="取消"  title="取消"/>
+			</span>
+		</div>
+		<!--删除确认结束-->
+		<!--清空回收站确认-->
+		<div id="recycle_empty_alert">
+			<h3><i class="close_btn" title="关闭"></i>清空回收站</h3>
+			<div class="alert_content">
+				<p>彻底删除后将无法恢复<br />确定清空回收站？</p>
+			</div>
+			<span class="w_bottom">
+				<input type="button" id="recycle_empty_dete" value="确定" title="确定" />
+				<input type="button" id="recycle_empty_cancel" value="取消"  title="取消"/>
+			</span>
+		</div>
+		<!--清空回收站确认结束-->
+		</div>
+							
+

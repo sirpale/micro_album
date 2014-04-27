@@ -1,0 +1,441 @@
+
+<!-- <link rel="stylesheet" href="../public/css/photo_album_v1.0.1.css"> -->
+
+<script type="text/javascript" src="../bin/album_v1.0.0.js"></script>
+<script type="text/javascript" src="../bin/base_drag_v1.0.0.js"></script>
+<script type="text/javascript" src="../bin/load_page_v1.0.0.js"></script>
+<script type="text/javascript" src="../bin/public_v1.0.0.js"></script>
+
+<div id="PageScreen">
+	<div id="photo_album">
+		<div class="view_wrapper">
+			<!--内容标题开始-->
+			<div class="view_header">
+				<h2 class="view_title">相册专辑（共15个）</h2>
+			</div>
+			<!--右边内容结束-->
+			<!--内容开始-->
+			<div class="view_body">
+				<!--内容导航-->
+				<nav>
+					<ul>
+						<li class="upload_btn"><a href="javascript:;" title="上传图片">上传图片</a></li>
+						<li class="gray create_btn"><a href="javascript:;">创建相册</a></li>
+						<li class="gray display" style="display:none;">
+							<a href="javascript:;">展示设置
+								<div class="sub_menu">
+									<dl>
+										<dt>视图</dt>
+										<dd>
+											<span>普通视图</span>
+											<input type="radio" name="view_radio_set" checked>
+											<span class="check"></span>
+										</dd>
+										<dd>
+											<span>分类视图</span>
+											<input type="radio" name="view_radio_set">
+											<span class="check"></span>
+										</dd>
+									</dl>
+									<dl>
+										<dt>排序</dt>
+										<dd>
+											<span>最近上传在前</span>
+											<input type="radio" name="sort_radio_set" checked>
+											<span class="check"></span>
+										</dd>
+										<dd>
+											<span>最新创建在前</span>
+											<input type="radio" name="sort_radio_set">
+											<span class="check"></span>
+										</dd>
+										<dd>
+											<span>最新创建在后</span>
+											<input type="radio" name="sort_radio_set">
+											<span class="check"></span>
+										</dd>
+										<dd>
+											<span>自定义排序</span>
+											<input type="radio" name="sort_radio_set">
+											<span class="check"></span>
+										</dd>
+									</dl>
+								</div>
+							</a>
+						</li>
+						<li class="gray recycle_btn"><a href="javascript:;">回收站</a></li>
+					</ul>
+				</nav>
+				<!--相册展示-->
+				<section>
+					<ul>						
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p1.jpg" src="../public/image/loading.gif"class="wait_load">
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册1">相册1</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p2.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册2">相册2</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p3.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册3">相册3</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p4.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册4">相册4</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p5.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册5">相册5</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p6.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册6">相册6</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p7.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册7">相册7</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p8.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册8">相册8</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p9.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册9">相册9</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p10.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册10">相册10</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p11.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册11">相册11</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>
+						<li class="album_list">
+							<a href="javascript:;">
+								<img xsrc="../public/image/p12.jpg" src="../public/image/loading.gif"class="wait_load" />
+								<div class="move show"></div>
+								<div class="change_cover show"></div>
+								<div class="num show">共<em>6</em>张</div>
+							</a>
+							<h3 title="相册12">相册12</h3>
+							<div class="update_time">创建于2014-4-1</div>
+							<div class="set show">
+								<span class="edit" title="编辑相册">编辑
+									<span class="pic_edit"></span>
+								</span>
+								<span class="delete" title="删除相册">删除
+									<span class="pic_delete"></span>
+								</span>
+							</div>
+						</li>						
+					</ul>
+				</section>
+				<!--分页-->				
+				<div class="list_page" style="display:none;">
+					<span class="first"><span></span><span></span></span>
+					<span class="pre"><span></span></span>
+					<span class="page num1">1</span>
+					<span class="page">2</span>
+					<span class="next"><span></span></span>
+					<span class="last"><span></span><span></span></span>
+					<span class="jump_page">跳转到:</span>
+					<select name="select_page">
+						<option value="page100">第23页</option>
+						<option value="page99">第45页</option>
+						<option value="page88" selected="selected">第100页</option>
+						<option value="page77">第60页</option>
+					</select>
+					<a href="javascript:;">Go</a>
+				</div>
+			</div>
+			<!--内容结束-->
+		</div>
+	</div>
+	<!--上传图片-->
+	<div id="upload_pic">
+		<!-- 这里是弹窗部分 -->
+		<div class="views"> <span class="close_btn" title="关闭"></span>
+			<div class="views_top clearfix">
+				<div class="top_left clearfix">
+					<label>选择相册</label>
+					<div class="select">
+						<div class="select_top">我的相册一<span class="icon"></span></div>
+						<div class="select_content" style="display:none">
+							<ul>
+								<li class="album_list_item">我的相册2</li>
+								<li class="album_list_item selected">我的相册3</li>
+								<li class="album_list_item">我的相册4</li>
+								<li class="album_list_item">我的相册5</li>
+							</ul>
+						</div>
+					</div>
+					<div class="new_btn">创建相册</div>
+					<div class="up_now">
+						<input type="button" value="立即上传" class="up_btn">
+						<a href="javascript:;" class="add_btn">继续添加
+							<input id="uploadImage" multiple="true" type="file" name="photoimage" class="fimg2">
+						</a>									
+					</div>
+					<div class="up_num">共<em></em>张图片</div>
+				</div>
+				<div class="top_right">
+					<p>单张图片大小不能超过2M,未上传的图片关闭之后会被清空！</p>
+				</div>
+			</div>
+			
+			<!--上传图片按钮弹窗 -->
+			<div class="views_content_wrapper upload_index" style="display:block">
+				<div class="views_content">
+					<div class="select_btn">选择图片
+						<input id="uploadImage"  multiple="true" type="file" name="photoimage"/>
+					</div>						
+
+					<p>按住ctrl键选择多张图片<br />最多可选取20张</p>
+				</div>
+			</div>
+			<!-- 上传图片按钮弹窗结束 --> 
+			
+			<!-- 上传图片内容弹窗 -->
+			<div class="views_content_wrapper upload_content">
+				<div class="up_pic_wrapper">
+					<ul class="clearfix upload_ul">
+						<!-- <li class="uploadPReview"><img src="../public/image/pic1.jpg">
+							<h3>图片名称</h3>
+							<span class="delete_btn"></span> </li> -->
+					</ul>
+				</div>
+			</div>
+			<!--上传图片内容弹窗结束 --> 
+			<!--上传提示窗口-->
+			<div class="update_message"></div>
+		</div>
+	<!-- 上传图片结束 -->
+</div>
+<!--创建相册-->
+<div id="create_album">
+	<h3><i class="close_btn" title="关闭"></i>创建相册</h3>
+	<form methed="post" >
+		<span class="form_name">
+			<label for="album_name">相册名称 ：</label>
+			<input type="text" id="album_name" /> <br />
+			<span class="count_txt">
+				<i id="name_word" style="font-weight:bold;">0</i>/30
+			</span>
+		</span>
+		<div class="create_album_message"></div>
+		<span class="form_name">
+			<label for="album_des">相册描述 ：</label>
+			<textarea name="album_des" id="album_des" cols="45" rows="5"></textarea>
+			<span class="count_txt">
+				<i id="des_word" style="font-weight:bold;">0</i>/100
+			</span>
+		</span> 
+		
+	</form>
+	<span class="w_bottom">
+		<input type="button" id="dete" value="确定" title="确定" />
+		<input type="button" id="cancel" value="取消"  title="取消"/>
+	</span>
+</div>
+
+<!--创建相册结束-->
+<!--编辑相册-->
+<div id="edit_album">
+	<h3><i class="close_btn" title="关闭"></i>编辑相册</h3>
+	<form methed="post">
+		<span class="form_name">
+			<label for="album_name">相册名称 ：</label>
+			<input type="text" id="edit_album_name" /> <br />
+			<span class="count_txt">
+				<i id="edit_name_word" style="font-weight:bold;">0</i>/30
+			</span>
+		</span>
+		
+		<span class="form_name">
+			<label for="album_des">相册描述 ：</label>
+			<textarea name="album_des" id="edit_album_des" cols="45" rows="5"></textarea>
+			<span class="count_txt">
+				<i id="edit_des_word" style="font-weight:bold;">0</i>/100
+			</span>
+		</span> 
+		
+	</form>
+	<span class="w_bottom">
+		<input type="button" id="edit_dete" value="确定" title="确定" />
+		<input type="button" id="edit_cancel" value="取消"  title="取消"/>
+	</span>
+</div>
+<!--编辑相册结束-->
+<!--删除相册确认-->
+<div id="delete_album_alert">
+	<h3><i class="close_btn" title="关闭"></i>删除相册</h3>
+	<div class="alert_content">
+		<p>
+			确定删除该相册？该相册有<em>4</em>张图片<br />
+			<span>删除的相册会被暂时保存在回收站里，30天之后自动删除！</span>
+		</p>
+		
+	</div>
+	<span class="w_bottom">
+		<input type="button" id="delete_album_dete" value="确定" title="确定" />
+		<input type="button" id="delete_album_cancel" value="取消"  title="取消"/>
+	</span>
+</div>
+<!--删除确认结束-->

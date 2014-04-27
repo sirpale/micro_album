@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<meta name="author" content="baiyu">
+<meta name="description" content="...">
+<title>轻时代微信公众平台后台控制面板-相册专辑</title>
+<!--title 控制面板.#{navs[top].label}.#{navs[top].navs[left].label}-->
+<link rel="stylesheet" href="../public/css/global.css">
+<link rel="stylesheet" href="../public/css/all.css">
+<link rel="stylesheet" href="../public/css/photo_album_v1.0.1.css">
+<link rel="stylesheet" href="../public/css/up_loadding_v1.0.1.css">
+<script type="text/javascript" src="../public/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../public/js/core.js"></script>
+<script type="text/javascript" src="../public/js/extend.js"></script>
+<script type="text/javascript" src="../bin/tool_v1.0.0.js"></script>
+<script type="text/javascript" src="../bin/base_v1.0.0.js"></script>
+<script type="text/javascript" src="../bin/album_v1.0.0.js"></script>
+<script type="text/javascript" src="../bin/base_drag_v1.0.0.js"></script>
+<script type="text/javascript">
+/* 
+ * jQuery Plugin : jConfirmAction 
+ *  
+ * by Hidayat Sagita 
+ * http://www.webstuffshare.com 
+ * Licensed Under GPL version 2 license. 
+ * 
+ */  
+$(function(){
+	document.onkeydown = function(e){
+		var ev = document.all ? window.event : e;
+		//var theEvent = window.event || e; 
+		//var code = theEvent.keyCode || theEvent.which; 
+
+		if(ev.keyCode == 13){		
+				$('#but1').click();	 
+			
+		}
+	};
+	$('#but1').click(function(){
+		alert("我是enter事件," + "text值:" + $("#text1").val()); 			
+	});
+	$('#but2').click(function(){
+		alert("我是enter事件," + "text值:" + $("#text1").val());			
+	});	
+		
+})
+
+</script>
+</head>
+<body>
+<form id="f1">
+	<input type="text" id="text1" /> 
+	<input type="button" id="but1" value="确定(我是enter事件)"/> 
+	<input type="submit" id="but2" value="确定(我是Jquery事件)" />
+</form> 
+
+
+
+</body>
+</html>

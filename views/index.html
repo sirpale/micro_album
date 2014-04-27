@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="lightimes">
+	<meta name="description" content="...">
+	<title>轻时代后台控制面板-相册专辑</title>
+	<!--title 控制面板.#{navs[top].label}.#{navs[top].navs[left].label}-->
+	<link rel="stylesheet" href="../public/css/global.css">
+	<link rel="stylesheet" href="../public/css/all.css">
+	<link rel="stylesheet" href="../public/css/index_v1.0.1.css">
+	<link rel="stylesheet" href="../public/css/up_loadding_v1.0.1.css">
+ 
+	<script type="text/javascript" src="../public/js/jquery.js"></script>
+	<script type="text/javascript" src="../public/js/core.js"></script>
+	<script type="text/javascript" src="../public/js/extend.js"></script>
+	
+	<script type="text/javascript" src="../bin/tool_v1.0.0.js"></script>
+	<script type="text/javascript" src="../bin/base_v1.0.0.js"></script>
+	<script type="text/javascript" src="../bin/load_page_v1.0.0.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$('#PageContent').load('photo_album.html?data&'+Math.random(),function(response,status,xhr){
+				var $loadPageMessage = $('#load_page_message');
+
+				$loadPageMessage.html('加载完成！');
+				$loadPageMessage.fadeOut(1000);
+
+				if (status == "error") {
+			    	var msg = "Sorry but there was an error: ";
+			    	$("#load_page_error").html(msg + xhr.status + " " + xhr.statusText);
+			  	}
+				$('#photo_album').before("<link rel=\"stylesheet\" href=\"../public/css/photo_album_v1.0.1.css\">");
+				//图片延迟加载
+				$(document).imgLazyLoading();
+				$('#back_top').backTop();
+			});
+		});
+	</script>
+
+</head>
+<body style="overflow-x:hidden;" >
+	<noscript>浏览器必须激活Javascript</noscript>
+	<p style="display:none" class="no_chrome">请使用 <a href="./software/GoogleChromeStandaloneEnterprise.msi" data-href="https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi">Google Chrome 浏览</a> 访问本网站</p>
+	<!--主体部分开始-->
+	<div id="DashboardWrapper">
+		<!--导航部分开始-->
+		<div id="TopBar" class="toolbar">
+			<!--logo-->
+			<h1 class="dash_logo">
+				<a href="javascript:" class="logo ico_logo"></a>
+			</h1>
+			<!--导航菜单-->
+			<ul id="TopNavigator">
+				<li data-cmd="pageNavigate" class="navi_item">
+					<a href="/dash" class="link_button">我的轻时代<i></i></a>
+				</li>
+				<li data-cmd="pageNavigate" class="navi_item">
+					<a href="/dash/site" class="link_button">轻网站<i></i></a>
+				</li>
+				<li data-cmd="pageNavigate" class="navi_item current">
+					<a href="javascript:" class="link_button">轻相册<i></i></a>
+				</li>
+				<li data-cmd="pageNavigate" class="navi_item">
+					<a href="/dash/user" class="link_button">会员管理<i></i></a>
+				</li>
+				<li data-cmd="pageNavigate" class="navi_item">
+					<a href="/dash/event" class="link_button">轻活动<i></i></a>
+				</li>
+				<li data-cmd="pageNavigate" class="navi_item">
+					<a href="/dash/app" class="link_button">更多应用模块<i></i></a>
+				</li>
+			</ul>
+			<!--退出登录-->
+			<div id="LoginInfo">
+				<a href="/dash/signout" class="link_button user_name">退出登录</a>
+			</div>
+		</div>
+		<!--导航部分结束-->
+		<!--主体内容开始-->
+		<div id="PageWrapper" >
+			<!--左边导航开始-->
+			<div id="LeftBar" class="sidebar">
+				<div class="nav_wrapper">
+					<h2 class="sub_title">left.label</h2>
+					<ul class="left_nav">
+						<!--if name === currentli.navi_item.currenta.link_button(href="javascript:") 图片列表<i></i>-->
+						<!--else-->
+<!-- 							<li class="navi_item">
+								<a href="javascript:" class="link_button pic_manage">图片列表<i></i></a>
+							</li> -->
+						<!--if name === currentli.navi_item.currenta.link_button(href="javascript:") 相册管理<i></i>-->
+						<!--else-->
+							<li class="navi_item">
+								<a href="javascript:" class="link_button album_manage">相册管理<i></i></a>
+							</li>
+							<li class="navi_item">
+								<a href="javascript:" class="link_button recycle_manage">回收站管理<i></i></a>
+							</li>
+					</ul>
+				</div>
+			</div>
+			<!--左边导航结束-->
+			<div id="RightBar" class="sidebar"></div>
+
+			<!--右边内容开始-->
+			<div id="PageContent" >
+				<span id="load_page_message">正在加载中请稍后...</span>
+				<span id="load_page_error"></span>
+				
+			</div>
+			<!--右边内容结束-->
+		</div>
+		<!--主体内容结束-->
+	</div>
+	<!--主体部分结束-->
+
+	<!--图片浏览-->
+	<div id="photo_browser" style="display:none;">
+		<div class="close_btn" title="关闭"></div>
+		<div class="big_photo_content">
+			<div class="arrow">
+				<span class="prev" title="上一张"><a href="javascript:;"></a></span>
+				<span class="next" title="下一张"><a href="javascript:;"></a></span>
+			</div>
+		</div>
+		<div class="pic_title"><i><span>0</span>/<b></b></i><em></em></div>
+		<div class="small_photo_content"></div>		
+	</div>
+	<!--图片浏览-->
+
+	<!--遮罩-->
+	<div id="screen"></div>
+	<div id="back_top" title="上去吧！">
+		<span class="s"></span>
+		<!-- <span class="b"></span> -->
+	</div>
+</body>
+</html>

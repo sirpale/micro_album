@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="ajc">
+		<meta name="description" content="...">
+		<title>控制面板</title>
+		<link rel="stylesheet" href="../public/css/reset.css">
+		<link rel="stylesheet" href="../public/css/all.css">
+		
+		<link rel="stylesheet" href="../public/css/up_loadding.css">
+		<style>
+			.image_wrapper{
+			 background:#f1f1f1;
+			 border-radius:4px;
+			 box-shadow:1px 1px 1px -1px #242628;
+			 float:left;
+			 margin:8px;
+			 padding:8px;
+			 width:120px;
+			 height:120px;
+			 position:relative;
+			}
+			.image_wrapper .controller{
+			 position:absolute;
+			 right:2px;
+			 top:2px;
+			}
+			.image_wrapper .wrapper{
+			 margin:0 auto;
+			 background-position:center center;
+			 background-repeat:no-repeat;
+			 width:120px;
+			 height:120px;
+			 overflow:hidden;
+			 text-align:center;
+			 display:block;
+			}</style>
+<script type="text/javascript" src="../public/js/jquery-1.7.min.js"></script>
+<script>
+		$(function(){
+			window.str = "abcde\r\n\
+			askjflskajflaskf\
+			askfjlfjask\
+			asjfklasjflas\
+				124214";
+			var selectTop = $(".select .select_top");
+			var selectContent = $(".select .select_content");
+			selectTop.click(function(e){
+				selectContent.slideToggle(200);
+			});
+			$(".album_list_item", selectContent).click(function(e){
+				var target = this;
+				selectContent.slideUp(200, function(){
+					selectTop.html(target.innerHTML + '<span class="icon"></span>');
+				});
+			});
+		});
+</script>
+
+	</head>
+	<body><noscript>浏览器必须激活Javascript</noscript>
+	<p style="display:none" class="no_chrome">请使用 <a href="./software/GoogleChromeStandaloneEnterprise.msi" data-href="https://dl.google.com/edgedl/chrome/install/GoogleChromeStandaloneEnterprise.msi">Google Chrome 浏览器</a> 访问本网站</p>
+	<div id="DashboardWrapper">
+		<div id="TopBar" class="toolbar">
+			<h1 class="dash_logo"><a href="javascript:" class="logo ico_logo"></a></h1>
+			<ul id="TopNavigator">
+				<li data-cmd="pageNavigate" class="navi_item"><a href="/dash" class="link_button">我的轻时代<i></i></a></li>
+				<li data-cmd="pageNavigate" class="navi_item"><a href="/dash/site" class="link_button">轻网站<i></i></a></li>
+				<li data-cmd="pageNavigate" class="navi_item current"><a href="javascript:" class="link_button">轻相册<i></i></a></li>
+				<li data-cmd="pageNavigate" class="navi_item"><a href="/dash/user" class="link_button">会员管理<i></i></a></li>
+				<li data-cmd="pageNavigate" class="navi_item"><a href="/dash/event" class="link_button">轻活动<i></i></a></li>
+				<li data-cmd="pageNavigate" class="navi_item"><a href="/dash/app" class="link_button">更多应用模块<i></i></a></li>
+			</ul>
+			<div id="LoginInfo"><a href="/dash/signout" class="link_button user_name">退出登录</a></div>
+		</div>
+		<div id="PageWrapper">
+			<div id="LeftBar" class="sidebar">
+				<div class="nav_wrapper">
+					<h2 class="sub_title">left.label</h2>
+					<ul class="left_nav"><!--if name === currentli.navi_item.current
+						a.link_button(href="javascript:") 图片列表<i></i>--><!--else-->
+						<li class="navi_item"><a href="/dash/image/list" class="link_button">图片列表<i></i></a></li><!--if name === currentli.navi_item.current
+						a.link_button(href="javascript:") 相册管理<i></i>--><!--else-->
+						<li class="navi_item"><a href="javascript:" class="link_button">相册管理<i></i></a></li>
+					</ul></div></div>
+			<div id="RightBar" class="sidebar"></div>
+
+
+<!-- 内容部分开始 -->
+			<div id="PageContent">
+				<div id="PageScreen">
+					<h2 class="page_title"></h2>
+					<div class="views_wrapper">
+	<!-- 这里是弹窗部分 -->
+							<div class="views">
+							<span class="dele_btn"></span>							
+							<div class="views_top clearfix">
+								<div class="top_left clearfix">
+									<label>选择相册</label>
+									<div class="select">
+										<div class="select_top">选择相册的名称<span class="icon"></span></div>
+										<div class="select_content" style="display:none">
+											<ul>
+												<li class="album_list_item">我的相册一</li>
+												<li class="album_list_item selected">我的相册2</li>
+												<li class="album_list_item">我的相册3</li>
+												<li class="album_list_item">我的相册4</li>
+											</ul>
+										</div>
+									</div>
+									<div class="new_btn">创建相册</div>
+									<div class="up_now" style="display:block"><input type="button" value="立即上传" class="up_btn"><a href="#" class="add_btn">继续添加</a></div></div>
+								<div class="top_right">
+									<p>单张图片大小不超过20M</p></div></div>
+
+							<!--上传图片按钮弹窗页面 -->
+							<div class="views_content_wrapper views_height" style="display:block">
+								<div class="views_content">
+									<div class="select_btn">选择图片</div>
+									<p>按住ctrl键选择多张图片最多可选取20张</p></div></div>
+							<!-- 上传图片按钮弹窗页面结束 -->
+
+							<!-- 上传图片内容弹窗页面 -->
+							<div class="views_content_wrapper" style="display:none">
+								<div class="up_pic_wrapper">
+									<ul class="clearfix">
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+										<li><img src="../public/image/pic1.jpg">
+											<h3>图片名称</h3>
+											<span class="delete_btn"></span>
+										</li>
+
+									</ul>
+								</div>
+							</div>
+							<!--上传图片内容弹窗页面结束 -->
+						</div>	
+	<!-- 弹窗部分结束 -->
+			</div></div></div>
+<!-- 内容部分结束 -->
+	</div></div></body></html>
