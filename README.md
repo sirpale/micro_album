@@ -45,7 +45,7 @@
 [![image]](http://www.github.com/)
 [image]:http://github.com/github.png "github"
 
-### 文字呗一些字符包围
+### 文字被一些字符包围
 > 文字被一些字符包围
 >
 > 只要在文字前面加上>空格即可
